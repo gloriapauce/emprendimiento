@@ -1,0 +1,22 @@
+emprende-childfund/
+│
+├── index.html 		# Página principal
+├── app.js 		# Script principal
+├── styles.css 		# Estilos globales (TailwindCSS)
+├── tailwind-config.js 	# Configuración personalizada de TailwindCSS
+├── src/
+│ ├── config/
+│ │ └── quizData.js 	# Datos de cuestionarios
+│ ├── components/ 	# Componentes reutilizables
+│ │ └── ui-cards.js 			# Tarjetas dinámicas
+│ ├── modules/ 		# Funcionalidades por módulo
+│ │ ├── auth.js		 	# Autenticación
+│ │ ├── dashboard.js 		# Panel de usuario
+│ │ ├── content.js 			# Contenido de rutas y módulos
+│ │ ├── community.js 		# Foros y comunidad
+│ │ ├── events.js 			# Registro y visualización de eventos
+│ │ ├── mentorship.js 		# Solicitud y gestión de mentorías
+│ │ └── fondoSemilla.js 		# Fondo semilla para emprendedores
+│ └── utils/ 		# Utilidades
+│ ├── dom.js 			# Funciones DOM
+│ └── state.js 			# Estado global

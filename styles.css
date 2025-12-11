@@ -1,0 +1,93 @@
+/* =======================================================
+   RESETEO BÁSICO Y FUENTE
+   ======================================================= */
+body {
+  /* La fuente Inter ya está definida en tailwind-config.js */
+  background-color: #f8f8f8; /* background-light */
+  min-height: 100vh;
+}
+
+/* =======================================================
+   LAYOUT PRINCIPAL
+   ======================================================= */
+
+/* * 1. Solución al solapamiento: Añadir padding al final del contenido 
+* que sea igual o mayor a la altura del menú inferior.
+* 2. Ocultar el menú inferior en pantallas medianas (md) y superiores.
+*/
+#app-container {
+  /* Espacio al final del contenido igual a la altura del nav inferior (~70px) */
+  padding-bottom: 70px; 
+}
+
+/* En pantallas de tamaño tablet o escritorio (>= 768px), 
+   ocultamos el menú inferior completamente. */
+@media (min-width: 768px) {
+  #bottom-nav {
+    display: none !important; /* Oculta completamente la barra inferior */
+  }
+
+  /* En desktop, el contenido no necesita el padding extra */
+  #app-container {
+    padding-bottom: 0;
+  }
+}
+
+
+/* =======================================================
+   ESTILOS DE SIDEBAR Y OVERLAY
+   ======================================================= */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 300px;
+  height: 100vh;
+  /* Usando colores definidos en tailwind-config.js: primary-childfund y secondary-childfund */
+  background: linear-gradient(180deg, #16794e 0%, #003c17 100%); 
+  transition: left 0.3s ease-in-out;
+  z-index: 50;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+  overflow-y: auto;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Oscurecido ligeramente */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 40;
+}
+
+.overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* =======================================================
+   ESTILOS DE COMPONENTES (Rutas)
+   ======================================================= */
+.route-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.route-card:hover {
+  transform: translateY(-5px);
+  /* Usando color primario para el shadow, como ya lo tenías */
+  box-shadow: 0 10px 15px -3px rgba(22, 121, 78, 0.3),
+    0 4px 6px -2px rgba(22, 121, 78, 0.2);
+}
+
+.offline-ready {
+  border-left: 4px solid #16794e; /* primary-childfund */
+}
