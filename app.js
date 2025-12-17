@@ -51,9 +51,6 @@ function showWelcome() {
 
   const welcomeHTML = `
     <div class="relative min-h-screen p-4">
-      <button onclick="showAdminLogin()" class="absolute top-4 right-4 text-primary-childfund font-semibold py-2 px-4 rounded-full hover:bg-primary-childfund hover:text-white transition duration-300 border border-primary-childfund text-xs sm:text-sm">
-          Administración
-      </button>
       <div class="flex flex-col items-center justify-center h-full text-center mt-20">
         <div class="mb-6 w-24 h-24 bg-gradient-to-br from-primary-childfund to-secondary-childfund rounded-full shadow-lg flex items-center justify-center">
           <span class="text-white text-4xl font-bold">CF</span>
@@ -538,3 +535,4 @@ window.onload = () => {
   initDOMListeners();
   showWelcome();
 };
+
